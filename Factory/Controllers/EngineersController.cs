@@ -87,7 +87,6 @@ namespace Factory.Controllers
       List<Machine> machines = _db.Machines.ToList();
       // If there are no machines available, then set to true; otherwise, set to false.
       ViewBag.NoMachinesBool = (machines.Count == 0) ? true : false;
-      // Create a SelectList from the list of available machines.
       ViewBag.MachineId = new SelectList(machines, "MachineId", "Model");
       return View(thisEngineer);
     }

@@ -87,7 +87,6 @@ namespace Factory.Controllers
       List<Engineer> engineers = _db.Engineers.ToList();
       // If there are no engineers available, then set to true; otherwise, set to false.
       ViewBag.NoEngineersBool = (engineers.Count == 0) ? true : false;
-      // Create a SelectList from the list of available engineers.
       ViewBag.EngineerId = new SelectList(engineers, "EngineerId", "Name");
       return View(thisMachine);
     }

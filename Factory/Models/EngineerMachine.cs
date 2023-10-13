@@ -8,7 +8,7 @@ namespace Factory.Models
     public int EngineerId { get; set; }
     public int MachineId { get; set; }
 
-    // Reference Navigation Property
+    // Reference Navigation Properties
     public Engineer Engineer { get; set; }
     public Machine Machine { get; set; }
   }

@@ -22,7 +22,16 @@ else
   <ul>
     @foreach (EngineerMachine join in Model.JoinEntities)
     {
-      <h4><li>@Html.ActionLink(join.Engineer.Name, "Details", "Engineers", new { id = join.Engineer.EngineerId })</li></h4>
+      @using (Html.BeginForm("DeleteJoin", "Machines"))
+      {
+        <h4>
+          <li>
+            @Html.ActionLink(join.Engineer.Name, "Details", "Engineers", new { id = join.Engineer.EngineerId })
+            @Html.Hidden("joinId", @join.EngineerMachineId)
+            <input type="submit" value="X" class="btn btn-sm btn-x btn-outline-danger"/>
+          </li>
+        </h4>
+      }
     }
   </ul>
 }

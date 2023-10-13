@@ -17,13 +17,11 @@
   <br/>
   @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
   <br/>
-  @Html.Label("Current Status")
+  @Html.Label("Active Status (Defaults to 'Idle')")
   <br/>
-  @Html.RadioButtonFor(model => model.Status, "Active") <b> Active</b>
-  <br/>
-  @Html.RadioButtonFor(model => model.Status, "Idle") <b> Idle</b>
-  <br/>
-  @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+  <div class="form-check form-switch">
+    @Html.CheckBoxFor(model => model.Active, new { @class = "form-check-input"})
+  </div>
   <br/>
   <br/>
   <input type="submit" value="Submit" class="btn btn-primary" />

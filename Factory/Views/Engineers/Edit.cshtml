@@ -19,6 +19,12 @@
   <br/>
   @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
   <br/>
+  @Html.Label("Active Status")
+  <br/>
+  <div class="form-check form-switch">
+    @Html.EditorFor(model => model.Active, new { htmlAttributes = new { @class = "form-check-input" } })
+  </div>
+  <br/>
   <br/>
   <input type="submit" value="Save" class="btn btn-success" />
 }

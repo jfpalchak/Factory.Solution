@@ -10,6 +10,7 @@
 <h2>Engineer Details</h2>
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h3>Engineer Id: @Html.DisplayFor(model => model.EngineerId)</h3>
+<h3>Status: <span class="@(Model.Active ? "text-success": "text-danger")">@(Model.Active ? "Active" : "Idle")</span></h3>
 <hr/>
 
 <div class="row justify-content-around">

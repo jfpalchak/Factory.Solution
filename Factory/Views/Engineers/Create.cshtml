@@ -17,6 +17,14 @@
   <br/>
   @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
   <br/>
+  @Html.Label("Current Status")
+  <br/>
+  @Html.RadioButtonFor(model => model.Status, "Active") <b> Active</b>
+  <br/>
+  @Html.RadioButtonFor(model => model.Status, "Idle") <b> Idle</b>
+  <br/>
+  @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+  <br/>
   <br/>
   <input type="submit" value="Submit" class="btn btn-primary" />
 }

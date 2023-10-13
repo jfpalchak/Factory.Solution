@@ -32,27 +32,28 @@ a {
   background-color: #4c4c4c;
 } */
 
-/* SPLASH PAGE */
+/* ENTITY LIST DISPLAY */
 .list-display {
-  /* background-color: rosybrown; */
-  /* border: 1px black solid; */
   text-align: center;
   list-style: none;
 }
 
-.splash {
-  margin-top: 50px;
-}
-
 .list-display li {
-  /* border: 1px solid black; */
   padding: 8px;
-  /* width: 300px; */
-  text-align: center;
   border-radius: 10px;
   background-color: gainsboro;
 }
 
-/* .splash-links {
-  text-align: left;
-} */
+.btn-x {
+  margin-left: 50px;
+  border-radius: 10px;
+  border: dotted 2px;
+  font-weight: bold;
+}
+
+/* SPLASH DISPLAY */
+.splash {
+  margin-top: 50px;
+  text-align: center;
+}
+

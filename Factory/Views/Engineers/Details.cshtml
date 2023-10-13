@@ -7,43 +7,48 @@
 
 <h5>Factory > Engineers > @Model.Name</h5>
 <hr/>
-
-<h2>Engineer Details:</h2>
+<h2>Engineer Details</h2>
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h3>Engineer Id: @Html.DisplayFor(model => model.EngineerId)</h3>
 <hr/>
-<h2>Licensed Machines:</h2>
 
-@if (Model.JoinEntities.Count == 0)
-{
-  <p>@Model.Name is not currently licensed to any machines.</p>
-}
-else
-{
-  <ul>
-    @foreach (EngineerMachine join in Model.JoinEntities)
+<div class="row justify-content-around">
+  <div class="col-3">
+
+    <div class="links container">
+      <br/>
+      <h5>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</h5>
+      <br/>
+      <h5>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</h5>
+      <h5>@Html.ActionLink("Remove Engineer", "Delete", new { id = Model.EngineerId })</h5>
+    </div>
+
+  </div>
+
+  <div class="col-5 details list-display">
+
+    <h2>Licensed Machines:</h2>
+
+    @if (Model.JoinEntities.Count == 0)
     {
-      @using (Html.BeginForm("DeleteJoin", "Engineers"))
-      {
-        <h4>
-          <li>
-            @Html.ActionLink(join.Machine.Model, "Details", "Machines", new { id = join.Machine.MachineId })
-            @Html.Hidden("joinId", @join.EngineerMachineId)
-            <input type="submit" value="X" class="btn btn-sm btn-x btn-outline-danger"/>
-          </li>
-        </h4>
-      }
+      <p>@Model.Name is not currently licensed to any machines.</p>
     }
-  </ul>
-}
+    else
+    {
+      @foreach (EngineerMachine join in Model.JoinEntities)
+      {
+        @using (Html.BeginForm("DeleteJoin", "Engineers"))
+        {
+          <h4>
+            <li>
+              @Html.ActionLink(join.Machine.Model, "Details", "Machines", new { id = join.Machine.MachineId })
+              @Html.Hidden("joinId", @join.EngineerMachineId)
+              <input type="submit" value="X" class="btn btn-sm btn-x btn-outline-danger"/>
+            </li>
+          </h4>
+        }
+      }
+  }
 
-<br/>
-
-<div class="links container">
-  <h5>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</h5>
-  <br/>
-  <h5>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</h5>
-  <h5>@Html.ActionLink("Remove Engineer", "Delete", new { id = Model.EngineerId })</h5>
-  <br/>
-  <h5>@Html.ActionLink("Back to Engineers", "Index")</h5>
+  </div>
 </div>

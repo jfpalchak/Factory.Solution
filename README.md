@@ -57,7 +57,7 @@ $ git clone https://github.com/jfpalchak/Factory.Solution.git
       }
     }
    ```
-7. Next, make sure to update the connection string with your own choice of naming for the `[DATABASE]`, as well as your own system's values for `[USERNAME]`, and `[PASSWORD]` when logging in to MySQL. Don't forget to replace the brackets `[]` as well!
+7. Next, make sure to update the connection string with your own choice of naming for the `[DATABASE]`, as well as your own system's values for `[USERNAME]` and `[PASSWORD]` when logging in to MySQL. Don't forget to replace the brackets `[]` as well!
 8. With `appsettings.json` properly configured, in the command line, run the following command to reference the project's migrations and re-create the application's database:
 
    ```

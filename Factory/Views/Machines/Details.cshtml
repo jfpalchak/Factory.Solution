@@ -30,7 +30,7 @@ else
 <br/>
 
 <div class="links container">
-  <h5>@Html.ActionLink("Add an Engineer", "AddEngineer")</h5>
+  <h5>@Html.ActionLink("Add an Engineer", "AddEngineer", new { id = Model.MachineId })</h5>
   <br/>
   <h5>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</h5>
   <h5>@Html.ActionLink("Remove Machine", "Delete", new { id = Model.MachineId })</h5>

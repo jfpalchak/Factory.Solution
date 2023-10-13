@@ -1,3 +1,36 @@
 @{
   Layout = "_Layout";
 }
+@model Factory.Models.Engineer
+@using Factory.Models;
+
+<h1>Engineers > @Model.Name</h1>
+<hr/>
+<h2>Engineer Details:</h2>
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>Engineer Id: @Html.DisplayFor(model => model.EngineerId)</h3>
+<hr/>
+@if (Model.JoinEntities.Count == 0)
+{
+  <p>@Model.Name is not currently licensed to any machines.</p>
+}
+else
+{
+  <ul>
+    @foreach (EngineerMachine join in Model.JoinEntities)
+    {
+      <h4><li>@Html.ActionLink(join.Machine.Model, "Details", "Machines", new { id = join.Machine.MachineId })</li></h4>
+    }
+  </ul>
+}
+
+<br/>
+
+<div class="links container">
+  <h5>@Html.ActionLink("Add a Machine", "AddMachine")</h5>
+  <br/>
+  <h5>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</h5>
+  <h5>@Html.ActionLink("Remove Engineer", "Delete", new { id = Model.EngineerId })</h5>
+  <br/>
+  <h5>@Html.ActionLink("Back to Engineers", "Index")</h5>
+</div>

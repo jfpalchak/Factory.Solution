@@ -1,3 +1,28 @@
 @{
   Layout = "_Layout";
 }
+
+@model Factory.Models.Engineer
+
+<h1>Edit Engineer</h1>
+<hr/>
+<h2>Edit this Engineer: @Html.DisplayFor(model => model.Name)</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.EngineerId)
+
+  @Html.LabelFor(model => model.Name)
+  <br/>
+  @Html.EditorFor(model => model.Name)
+  <br/>
+  @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+  <br/>
+  <br/>
+  <input type="submit" value="Save" class="btn btn-success" />
+}
+
+<br/>
+<div class="links container">
+  <h5>@Html.ActionLink("Back to Engineer", "Details", new { id = Model.EngineerId })</h5>
+</div>

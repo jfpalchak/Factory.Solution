@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h1>Add New Machine</h1>
+<hr/>
+
+<h2>Machine's Information:</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Model)
+  <br/>
+  @Html.TextBoxFor(model => model.Model)
+  <br/>
+  @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+  <br/>
+  <br/>
+  <input type="submit" value="Submit" class="btn btn-primary" />
+}
+
+<br/>
+
+<div class="links container">
+  <h5>@Html.ActionLink("Back to Machines", "Index")</h5>
+</div>

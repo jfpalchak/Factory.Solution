@@ -30,7 +30,7 @@ namespace Factory.Controllers
     [HttpPost]
     public ActionResult Create(Engineer engineer)
     {
-      if (!ModelState.IsVald)
+      if (!ModelState.IsValid)
       {
         return View(engineer);
       }

@@ -1,3 +1,37 @@
 @{
   Layout = "_Layout";
 }
+
+@model Factory.Models.Engineer
+
+<h1>Engineers > @Model.Name > License</h1>
+<hr/>
+<h2>Add a License for this Engineer: @Model.Name</h2>
+<hr/>
+
+@if (ViewBag.NoMachinesBool)
+{
+  <p>There are no Machines available to license.</p>
+  <p><b>NOTE: </b>You must first add a Machine to the system before you can license an Engineer.</p>
+  <h4>@Html.ActionLink("Add a Machine", "Create", "Machines")</h4>
+}
+else
+{
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.EngineerId)
+
+    @Html.Label("Select a Machine")
+    <br/>
+    @Html.DropDownList("MachineId")
+
+    <br/>
+    <br/>
+    <input type="submit" value="License" class="btn btn-primary" />
+  }
+}
+
+<br/>
+<div class="links container">
+  <h5>@Html.ActionLink("Back to Engineer", "Details", new { id = Model.EngineerId })</h5>
+</div>

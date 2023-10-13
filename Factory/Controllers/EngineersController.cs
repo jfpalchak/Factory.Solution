@@ -80,5 +80,30 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult AddMachine(int id)
+    {
+      Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      List<Machine> machines = _db.Machines.ToList();
+      // If there are no machines available, then set to true; otherwise, set to false.
+      ViewBag.NoMachinesBool = (machines.Count == 0) ? true : false;
+      // Create a SelectList from the list of available machines.
+      ViewBag.MachineId = new SelectList(machines, "MachineId", "Model");
+      return View(thisEngineer);
+    }
+
+    [HttpPost]
+    public ActionResult AddMachine(Engineer engineer, int machineId)
+    {
+      #nullable enable
+      EngineerMachine? joinEntity = _db.EngineerMachines.FirstOrDefault(join => (join.MachineId == machineId && join.EngineerId == engineer.EngineerId));
+      #nullable disable
+      if (joinEntity == null && machineId != 0)
+      {
+        _db.EngineerMachines.Add(new EngineerMachine() { EngineerId = engineer.EngineerId, MachineId = machineId });
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Details", new { id = engineer.EngineerId });
+    }
   }
 }

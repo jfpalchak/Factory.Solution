@@ -13,7 +13,7 @@
 <hr/>
 
 <div class="row justify-content-around">
-  <div class="col-3">
+  <div class="col-3 stack">
 
     <div class="links container">
       <br/>
@@ -25,7 +25,7 @@
 
   </div>
 
-  <div class="col-5 details list-display">
+  <div class="col-6 details list-display stack">
 
     <h2>Licensed Machines:</h2>
 
@@ -41,9 +41,15 @@
         {
           <h4>
             <li>
-              @Html.ActionLink(join.Machine.Model, "Details", "Machines", new { id = join.Machine.MachineId })
-              @Html.Hidden("joinId", @join.EngineerMachineId)
-              <input type="submit" value="X" class="btn btn-sm btn-x btn-outline-danger"/>
+              <div class="row">
+                <div class="col">
+                  @Html.ActionLink(join.Machine.Model, "Details", "Machines", new { id = join.Machine.MachineId })
+                </div>
+                <div class="col-1">
+                  @Html.Hidden("joinId", @join.EngineerMachineId)
+                  <input type="submit" value="X" class="btn btn-sm btn-x btn-outline-danger"/>
+                </div>
+              </div>
             </li>
           </h4>
         }

@@ -9,7 +9,7 @@
     <h5>@Html.ActionLink("Add an Engineer", "Create", "Engineers")</h5>
     <h5>@Html.ActionLink("Add a Machine", "Create", "Machines")</h5>
   </div> *@
-  <div class="col-5 splash list-display">
+  <div class="col-5 splash list-display stack">
 
     <h2>Engineers</h2>
     @if(ViewBag.Engineers.Count == 0)
@@ -25,11 +25,11 @@
     }
 
   </div>
-  <div class="col-2 splash list-display links">
+  <div class="col-2 splash list-display splash-links">
     <h5>@Html.ActionLink("Add Engineer", "Create", "Engineers")</h5>
     <h5>@Html.ActionLink("Add Machine", "Create", "Machines")</h5>
   </div>
-  <div class="col-5 splash list-display">
+  <div class="col-5 splash list-display stack">
 
     <h2>Machines</h2>
     @if(ViewBag.Machines.Count == 0)

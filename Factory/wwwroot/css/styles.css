@@ -44,6 +44,7 @@ a {
   background-color: gainsboro;
 }
 
+
 .btn-x {
   margin-left: 50px;
   border-radius: 10px;
@@ -57,3 +58,15 @@ a {
   text-align: center;
 }
 
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 770px) {
+  .stack {
+    width: 80%;
+    text-align: center;
+  }
+
+  .splash-links {
+    display: none;
+  }
+
+}

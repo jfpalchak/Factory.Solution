@@ -8,8 +8,8 @@ namespace Factory.Models
     public int EngineerId { get; set; }
     [Required(ErrorMessage = "* Please enter a name for the engineer.")]
     public string Name { get; set; }
-    [Required(ErrorMessage = "* Please select a status for the new engineer.")]
-    public string Status { get; set; }
+    [Required(ErrorMessage = "* Please select a status for the engineer.")]
+    public bool Active { get; set; }
 
     // Collection Navigation Property
     public List<EngineerMachine> JoinEntities { get; }

@@ -10,6 +10,7 @@
 * .NET 6
 * ASP.NET Core MVC
 * Entity Framework Core
+* Entity Framework Core CLI Tools
 * MySQL
 * MySQL Workbench
 

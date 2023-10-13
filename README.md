@@ -2,7 +2,7 @@
 
 #### By _Joey Palchak_
 
-#### _A C# / ASP.NET Core MVC application using Entity Framework Core and MySQL._
+#### _A C# / ASP.NET Core MVC application using Entity Framework Core and MySQL, with a focus on Many-to-Many relationships._
 
 ## Technologies Used
 
@@ -15,7 +15,9 @@
 
 ## Description
 
-{DESCRIPTION}
+An MVC web application for a fictional factory to manage their engineers, and the machines they are licensed to fix. A user is able to add a list of engineers, a list of machines, and specify which engineers are licensed to repair which machines. 
+
+An engineer can be licensed to repair many machines, and a machine can have many engineers licensed to repair it.
 
 ## Setup/Installation Requirements
 
@@ -38,12 +40,12 @@ $ dotnet ef
 
 Assuming you've completed the required steps above:
 
-1. Copy the **[URL](#REPO LINK)** provided for this repository.
+1. Copy the **[URL](https://github.com/jfpalchak/Factory.Solution.git)** provided for this repository.
 2. Open Terminal.
 3. Change your working directory to where you want the cloned directory.
 4. In your terminal, type `git clone` and use the copied URL from Step 1. Or, copy the following git command:
 ```bash
-$ git clone [URL]
+$ git clone https://github.com/jfpalchak/Factory.Solution.git
 ```
 5. Open your terminal and navigate to this project's production directory called `Factory`.
 6. Within the production directory of the project, create a file called `appsettings.json` and add the following code to it:
@@ -54,20 +56,20 @@ $ git clone [URL]
       }
     }
    ```
-7. Next, make sure to update the connection string with your own system's values for `[USERNAME]`, and `[PASSWORD]`! Don't forget to replace the brackets `[]` as well.
+7. Next, make sure to update the connection string with your own choice of naming for the `[DATABASE]`, as well as your own system's values for `[USERNAME]`, and `[PASSWORD]` when logging in to MySQL. Don't forget to replace the brackets `[]` as well!
 8. With `appsettings.json` properly configured, in the command line, run the following command to reference the project's migrations and re-create the application's database:
-9. 
+
    ```
    $ dotnet ef database update
    ```
-10. Then, in the command line, run the following command to compile and run the web application in development mode with a watcher:
+9.  Then, in the command line, run the following command to compile and run the web application in development mode with a watcher:
    
 ```bash
 $ dotnet watch run
 ```
 > Optionally, you can run `dotnet build` to compile this web app without running it.
 
-11. Open your browser to https://localhost:5001 to navigate and use the web application. 
+10. Open your browser to https://localhost:5001 to navigate and use the web application. 
 > If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS.
 
 ## Known Bugs

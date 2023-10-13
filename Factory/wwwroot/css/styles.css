@@ -3,6 +3,7 @@
 a {
   text-decoration: none;
 }
+
 /* NAVBAR */
 #navbar ul{
   font-size: large;
@@ -32,15 +33,18 @@ a {
 } */
 
 /* SPLASH PAGE */
-.splash-display {
+.list-display {
   /* background-color: rosybrown; */
   /* border: 1px black solid; */
   text-align: center;
   list-style: none;
+}
+
+.splash {
   margin-top: 50px;
 }
 
-.splash-display li {
+.list-display li {
   /* border: 1px solid black; */
   padding: 8px;
   /* width: 300px; */

@@ -7,25 +7,31 @@
 
 <h5>Factory > Engineers</h5>
 <hr/>
-
-<h2>Available Engineers:</h2>
-
-@if (Model.Count == 0)
-{
-  <p>There are currently no Engineers in the system.</p>
-}
-else
-{
-  <ul>
-    @foreach (Engineer engineer in Model)
-    {
-      <h4><li>@Html.ActionLink(engineer.Name, "Details", new { id = engineer.EngineerId })</li></h4>
-    }
-  </ul>
-}
-
 <br/>
 
-<div class="links container">
-  <h5>@Html.ActionLink("Add New Engineer", "Create")</h5>
+<div class="row justify-content-around">
+  <div class="col-3">
+
+    <div class="links container">
+      <h5>@Html.ActionLink("Add New Engineer", "Create")</h5>
+    </div>
+
+  </div>
+  <div class="col-5 list-display">
+
+    <h2>Available Engineers:</h2>
+
+    @if (Model.Count == 0)
+    {
+      <p>There are currently no Engineers in the system.</p>
+    }
+    else
+    {
+      @foreach (Engineer engineer in Model)
+      {
+        <h4><li>@Html.ActionLink(engineer.Name, "Details", new { id = engineer.EngineerId })</li></h4>
+      }
+    }
+    
+  </div>
 </div>

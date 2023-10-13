@@ -1,6 +1,7 @@
 @{
   Layout = "_Layout";
 }
+
 @model Factory.Models.Engineer
 @using Factory.Models;
 
@@ -10,6 +11,8 @@
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h3>Engineer Id: @Html.DisplayFor(model => model.EngineerId)</h3>
 <hr/>
+<h2>Licensed Machines:</h2>
+
 @if (Model.JoinEntities.Count == 0)
 {
   <p>@Model.Name is not currently licensed to any machines.</p>

@@ -1,3 +1,9 @@
+/* GENERAL */
+
+a {
+  text-decoration: none;
+}
+/* NAVBAR */
 #navbar ul{
   font-size: large;
   list-style-type: none;
@@ -18,9 +24,31 @@
   /* color: white; */
   text-align: center;
   /* padding: 14px 16px; */
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 /* 
 #navbar a:hover {
   background-color: #4c4c4c;
+} */
+
+/* SPLASH PAGE */
+.splash-display {
+  /* background-color: rosybrown; */
+  /* border: 1px black solid; */
+  text-align: center;
+  list-style: none;
+  margin-top: 50px;
+}
+
+.splash-display li {
+  /* border: 1px solid black; */
+  padding: 8px;
+  /* width: 300px; */
+  text-align: center;
+  border-radius: 10px;
+  background-color: gainsboro;
+}
+
+/* .splash-links {
+  text-align: left;
 } */

@@ -4,33 +4,45 @@
 
 @using Factory.Models;
 
-<h5>Factory</h5>
-<hr/>
+<div class="row justify-content-center">
+  @* <div class="col-2 splash-display splash-links">
+    <h5>@Html.ActionLink("Add an Engineer", "Create", "Engineers")</h5>
+    <h5>@Html.ActionLink("Add a Machine", "Create", "Machines")</h5>
+  </div> *@
+  <div class="col-5 splash-display">
 
-<h2>Engineers</h2>
-@if(ViewBag.Engineers.Count == 0)
-{
-  <p>No Engineers are currently in the system.</p>
-}
-else
-{
-  @foreach(Engineer engineer in ViewBag.Engineers)
-  {
-    <h4><li>@Html.ActionLink(engineer.Name, "Details", "Engineers", new { id = engineer.EngineerId})</li></h4>
-  }
-}
+    <h2>Engineers</h2>
+    @if(ViewBag.Engineers.Count == 0)
+    {
+      <p>No Engineers are currently in the system.</p>
+    }
+    else
+    {
+      @foreach(Engineer engineer in ViewBag.Engineers)
+      {
+        <h4><li>@Html.ActionLink(engineer.Name, "Details", "Engineers", new { id = engineer.EngineerId})</li></h4>
+      }
+    }
 
-<br/>
+  </div>
+  <div class="col-2 splash-display splash-links">
+    <h5>@Html.ActionLink("Add Engineer", "Create", "Engineers")</h5>
+    <h5>@Html.ActionLink("Add Machine", "Create", "Machines")</h5>
+  </div>
+  <div class="col-5 splash-display">
 
-<h2>Machines</h2>
-@if(ViewBag.Machines.Count == 0)
-{
-  <p>No Machines are currently in the system.</p>
-}
-else
-{
-  @foreach(Machine machine in ViewBag.Machines)
-  {
-    <h4><li>@Html.ActionLink(machine.Model, "Details", "Machines", new { id = machine.MachineId })</li></h4>
-  }
-}
+    <h2>Machines</h2>
+    @if(ViewBag.Machines.Count == 0)
+    {
+      <p>No Machines are currently in the system.</p>
+    }
+    else
+    {
+      @foreach(Machine machine in ViewBag.Machines)
+      {
+        <h4><li>@Html.ActionLink(machine.Model, "Details", "Machines", new { id = machine.MachineId })</li></h4>
+      }
+    }
+
+  </div>
+</div>

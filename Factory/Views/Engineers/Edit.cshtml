@@ -4,7 +4,7 @@
 
 @model Factory.Models.Engineer
 
-<h5>Factory > Engineers > @Model.Name > Edit</h5>
+<h5>Factory > Engineers > @( Model.Name == null ? "!" : Model.Name) > Edit</h5>
 <hr/>
 
 <h2>Update Information:</h2>
@@ -24,6 +24,6 @@
 }
 
 <br/>
-<div class="links container">
+<div class="links">
   <h5>@Html.ActionLink("Back to Engineer", "Details", new { id = Model.EngineerId })</h5>
 </div>

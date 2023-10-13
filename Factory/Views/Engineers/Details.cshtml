@@ -5,8 +5,9 @@
 @model Factory.Models.Engineer
 @using Factory.Models;
 
-<h1>Engineers > @Model.Name</h1>
+<h5>Factory > Engineers > @Model.Name</h5>
 <hr/>
+
 <h2>Engineer Details:</h2>
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h3>Engineer Id: @Html.DisplayFor(model => model.EngineerId)</h3>

@@ -4,7 +4,7 @@
 
 @using Factory.Models;
 
-<h1>Dr. Sillystringz's Factory</h1>
+<h5>Factory</h5>
 <hr/>
 
 <h2>Engineers</h2>
@@ -34,10 +34,3 @@ else
     <h4><li>@Html.ActionLink(machine.Model, "Details", "Machines", new { id = machine.MachineId })</li></h4>
   }
 }
-
-<br/>
-
-<div class="links container">
-  <h5>@Html.ActionLink("Manage Engineers", "Index", "Engineers")</h5>
-  <h5>@Html.ActionLink("Manage Machines", "Index", "Machines")</h5>
-</div>
